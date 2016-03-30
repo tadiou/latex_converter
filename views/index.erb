@@ -1,0 +1,10 @@
+<form action="/" method="POST">
+    Convert from LaTex ($ delimiter): 
+    <input type="text" name="latex_string" value="<%= params[:latex_string] %>">
+    <input type="submit">
+</form>
+
+<%- if @string_render -%>
+  <%= @string_render[:data] %>
+  <%= @string_render[:exception] %>
+<%- end -%>
