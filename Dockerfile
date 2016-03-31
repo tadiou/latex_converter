@@ -25,12 +25,10 @@ RUN /bin/bash -l -c "bundle exec rake compile"
 RUN gem install foreman
 RUN gem install unicorn
 
-# ONBUILD PROTOCOL
-RUN bundle config --global frozen 1
-
+RUN echo "one thing"
 RUN git clone https://github.com/tadiou/latex_converter /usr/src/app
 WORKDIR /usr/src/app
-ONBUILD RUN bundle install
+RUN bundle install
 
 # Add default foreman config
 
