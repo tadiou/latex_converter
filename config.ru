@@ -1,12 +1,10 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
-require './app'
+require 'unicorn'
 require 'json'
 require 'mathematical'
 
-set :environment, :development
-set :run, false
-set :raise_errors, true
+require File.expand_path '../app.rb', __FILE__
 
 run App
