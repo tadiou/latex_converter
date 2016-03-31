@@ -3,7 +3,7 @@
 @dir = File.join(File.dirname(__FILE__),"")
 
 worker_processes 2
-working_directory @dir
+working_directory "/usr/src/app"
 
 timeout 30
 

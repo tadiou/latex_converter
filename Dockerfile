@@ -25,7 +25,7 @@ RUN /bin/bash -l -c "bundle exec rake compile"
 RUN gem install foreman
 RUN gem install unicorn
 
-RUN echo "one thing"
+RUN echo "echo"
 RUN git clone https://github.com/tadiou/latex_converter /usr/src/app
 WORKDIR /usr/src/app
 RUN bundle install
@@ -33,5 +33,5 @@ RUN bundle install
 # Add default foreman config
 
 ENV RAILS_ENV production
-# CMD ["exec","bundle", "unicorn","-D"]
-CMD foreman start -f Procfile
+CMD ["exec","bundle", "unicorn","-D"]
+# CMD foreman start -f Procfile
